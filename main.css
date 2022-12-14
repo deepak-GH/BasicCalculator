@@ -1,0 +1,192 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --LT-BGCOLOR1:  hwb(61 52% 2% / 0.999) ;
+    --LT-BGCOLOR2:   rgba(175, 243, 130, 0.818);
+    --LT-BORDER: rgb(107, 4, 2);
+    --LT-TEXTCOLOR: rgb(7, 1, 29);
+    --LT-BOXBORDER:  rgb(25,14,1);
+    --LT-BUTTONBGCOLOR: rgba(254, 254, 253, 0.997);
+    --LT-BORDER-SHADOW:  3px 3px 5px palevioletred;
+    --LT-BUTTON-TEXT-COLOR:#000; 
+
+    --LT-CONTAINER-BGCOLOR:rgb(255, 165, 156);  
+    --LT-CALCHEADER-BGCOLOR: rgb(240, 244, 243) ;
+    --LT-CALCHEADER-BORDER: 1.5px solid rgb(21, 6, 106); 
+    --LT-CALCBODY-BGCOLOR:   rgba(254, 254, 253, 0.818);    
+}
+body {
+    background-image:radial-gradient(var(--LT-BGCOLOR1), var(--LT-BGCOLOR2)) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    position: relative;
+}
+.calcContainer {
+    background-color: var(--LT-CONTAINER-BGCOLOR);
+    /* background-color:  hwb(62 65% 23% / 0.999);   */
+    min-width: 50vw;
+    min-height: 50vh;
+    border: 1px solid var(--LT-BORDER);
+    box-shadow: var(--LT-BORDER-SHADOW);
+    border-radius: 5px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    flex-shrink: 4;
+    margin: 0.20rem;
+    padding: 0.2rem;
+    position: relative;
+    /* display: inline-block; */
+}
+.calcHeader{
+    margin: 0.1rem;
+    padding: 0.1rem;
+    border: none;
+    width: 100%;
+    background-color: var(--LT-CALCHEADER-BGCOLOR);
+    border: var(--LT-CALCHEADER-BORDER);
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.theme{
+    margin: 0.2rem;
+    padding: 0.2rem;
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+h1 a{
+    color:var(--LT-TEXTCOLOR);
+    text-decoration: none;
+    text-shadow: var(--LT-BORDER-SHADOW);
+    font-style: italic;
+    font-weight: lighter;
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.calcBody {
+    margin: auto;
+    text-align: center;
+    border: none;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    flex-shrink: 4;
+    background-color: var(--LT-CALCBODY-BGCOLOR);
+    border-radius: 5px;
+}
+.calcDisplay {
+    /* border: 2px solid var(--LT-BOXBORDER); */
+    border: none;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    box-shadow: var(--LT-BORDER-SHADOW);
+    margin:0;
+    padding: 0.8rem;
+    background-color: var(--LT-BUTTONBGCOLOR);
+    text-align: right;
+    color: var(--LT-BUTTON-TEXT-COLOR);
+    font-size: x-large;
+}
+.calcButton{
+    /* border: 2px solid var(--LT-BOXBORDER); */
+    border: none;
+    border-radius: 15px;
+    box-shadow: var(--LT-BORDER-SHADOW);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem 0.1rem;
+    padding: 0.8rem;
+    font-weight: bold;
+    color: var(--LT-BUTTON-TEXT-COLOR);
+    background-color: var(--LT-BUTTONBGCOLOR);
+}
+td{
+    border: 1.5px solid var(--LT-BOXBORDER);
+    background-color: var(--LT-BUTTONBGCOLOR);
+    opacity: 1;
+} 
+tr:first-child td{
+    border-radius: 5px 5px 0 0;
+}
+/* tr:nth-child(2) td:first-child{
+    border-radius: 5px 0 0 0;
+} */
+tr:nth-child(2) td:last-child{
+    border-radius: 0 0 5px 0;
+}
+tr:last-child td:first-child{
+    border-radius: 0 0 0 5px;
+}
+
+td .calcButton{
+    display: inline-block;
+    justify-content: space-evenly;
+    margin: .8rem ;
+    position: relative;
+}
+.longButton{
+    /* display: flex;
+    position: absolute; 
+    height: calc(3.5rem + 15vh);  */
+    display: inline-block;
+    position: relative;
+    height: 16rem; 
+}
+.cancelButton{
+    color:red;
+    font-weight: bolder;
+}
+.calcButton:active{
+    transform: scale(1.2);
+    transition: all ease 0.3s;
+}
+@media screen and (min-width:481px) {
+    .calcButton{
+        transform: scale(1.30,1.05);
+    }
+} 
+@media screen and (min-width:769px) {
+    .calcButton{
+        transform: scale(1.60,1.05);
+    }
+} 
+@media screen and (min-width:1025px) {
+    .calcButton{
+        transform: scale(2.0,1.1);
+    }
+} 
+@media screen and (min-width:1201px) {
+    .calcButton{
+        transform: scale(2.25,1.1);
+    }
+} 
+@media (prefers-color-scheme:dark){
+    :root{
+        
+        --LT-BGCOLOR1:rgb(6, 2, 28);
+        --LT-BGCOLOR2:rgb(1, 0, 0);
+        --LT-BORDER: hsl(12, 45%, 98%);
+        --LT-TEXTCOLOR: hsl(176, 100%, 88%);
+        --LT-BOXBORDER:  rgb(150, 246, 249);
+        --LT-BUTTONBGCOLOR: rgba(248, 251, 146, 0.997);
+        --LT-BORDER-SHADOW:  1px 1px 5px rgb(253, 254, 242);
+        --LT-BUTTON-TEXT-COLOR:#000;
+
+        --LT-CONTAINER-BGCOLOR:  rgba(195, 7, 238, 0.818); 
+        --LT-CALCHEADER-BGCOLOR:  hwb(255 0% 89% / 0.999) ;
+        --LT-CALCHEADER-BORDER: 2px solid rgb(239, 245, 215); 
+        --LT-CALCBODY-BGCOLOR:   rgba(1, 12, 19, 0.818);
+
+    }
+}
